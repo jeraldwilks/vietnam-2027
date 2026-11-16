@@ -194,6 +194,20 @@ a.r-place:hover{text-decoration:underline;text-decoration-color:var(--gold);text
 .facts dd{margin:0;font-size:16px;color:var(--ink-2)}
 .sub-h{font-size:22px;margin:0 0 14px}
 .vn-now{margin:12px 0 0;color:var(--ink-2);font-size:15px}
+.flights-h{margin-top:48px;margin-bottom:6px}
+.flights-note{margin:0 0 14px;color:var(--ink-2)}
+.flights{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.flights li{display:grid;grid-template-columns:104px 1.2fr 1fr 1.3fr;gap:2px 18px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--line)}
+.f-date{font-weight:600;color:var(--red);font-size:15px;font-variant-numeric:tabular-nums}
+.f-route{font-family:var(--serif);font-weight:600;font-size:19px}
+.f-no{font-weight:600;font-size:15px}
+.f-time{color:var(--ink-2);font-size:15px;font-variant-numeric:tabular-nums}
+@media (max-width:760px){
+  .flights li{grid-template-columns:104px 1fr}
+  .f-no,.f-time{grid-column:2}
+}
+.ideas-list{list-style:none;margin:0 0 36px;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.ideas-list li{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:10px;padding:11px 14px;color:var(--ink-2);font-size:15.5px;line-height:1.45}
 .sched{margin-top:12px;border-top:1px solid var(--line);padding-top:10px}
 .sched summary{cursor:pointer;font-weight:600;font-size:15px;color:var(--jade)}
 .sched summary:hover{text-decoration:underline;text-underline-offset:3px}
@@ -309,19 +323,28 @@ a.chip:hover{border-color:var(--accent);color:var(--ink)}
     <h2>Six stops, south to north</h2>
     <p class="lede">We fly into Ho Chi Minh City, head into the Mekong Delta, then work our way up the coast and finish in Hanoi and Ha Long Bay.</p>
     <div class="route">
-      <div><svg class="map" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 512" preserveAspectRatio="xMidYMid meet" role="group" aria-label="Sketch map of the route"><rect x="0" y="0" width="330" height="512" rx="14" fill="#fbf1d9"/><path d="M55.9,63.2 Q44.5,50.7 55.9,47.5 Q67.2,44.3 76.3,44.3 Q85.4,44.3 92.9,41.2 Q100.5,38.0 112.6,38.0 Q124.7,38.0 132.2,28.9 Q139.8,19.8 148.9,26.6 Q157.9,33.3 168.5,34.1 Q179.1,34.9 182.1,49.1 Q185.2,63.2 195.7,69.5 Q206.3,75.8 213.9,76.6 Q221.4,77.4 212.4,86.1 Q203.3,94.8 194.2,99.5 Q185.2,104.2 182.1,112.1 Q179.1,120.0 170.0,124.7 Q161.0,129.4 157.9,138.9 Q154.9,148.3 153.4,156.2 Q151.9,164.0 157.9,173.5 Q164.0,183.0 170.0,190.8 Q176.1,198.7 185.2,209.7 Q194.2,220.8 201.8,227.0 Q209.3,233.3 218.4,241.2 Q227.5,249.1 230.5,252.2 Q233.5,255.4 241.1,266.4 Q248.7,277.5 251.7,288.5 Q254.7,299.5 257.0,310.5 Q259.2,321.5 260.0,332.6 Q260.8,343.6 263.0,351.5 Q265.3,359.4 261.5,365.7 Q257.7,372.0 257.7,381.4 Q257.7,390.9 250.2,397.2 Q242.6,403.5 233.5,408.2 Q224.5,412.9 215.4,417.6 Q206.3,422.4 200.3,426.3 Q194.2,430.2 189.7,429.4 Q185.2,428.6 183.6,434.9 Q182.1,441.2 179.1,449.1 Q176.1,457.0 167.0,461.7 Q157.9,466.5 148.9,474.3 Q139.8,482.2 131.5,483.8 Q123.2,485.4 123.9,474.3 Q124.7,463.3 125.4,455.4 Q126.2,447.5 130.0,444.4 Q133.7,441.2 124.7,434.9 Q115.6,428.6 124.7,420.0 Q133.7,411.3 144.3,411.3 Q154.9,411.3 161.0,410.5 Q167.0,409.8 161.7,400.3 Q156.4,390.9 164.7,385.3 Q173.1,379.8 182.1,375.9 Q191.2,372.0 198.8,369.6 Q206.3,367.2 207.8,349.1 Q209.3,331.0 207.8,316.8 Q206.3,302.6 207.1,297.9 Q207.8,293.2 207.1,285.3 Q206.3,277.5 201.8,266.4 Q197.2,255.4 201.0,252.2 Q204.8,249.1 193.5,243.6 Q182.1,238.1 179.9,230.2 Q177.6,222.3 175.3,216.8 Q173.1,211.3 164.0,205.0 Q154.9,198.7 145.8,189.2 Q136.8,179.8 135.3,173.5 Q133.7,167.2 124.7,159.3 Q115.6,151.5 109.6,145.1 Q103.5,138.8 115.6,134.1 Q127.7,129.4 128.5,124.7 Q129.2,120.0 123.9,116.8 Q118.6,113.7 115.6,108.1 Q112.6,102.6 102.0,103.4 Q91.4,104.2 82.3,101.1 Q73.3,97.9 70.2,86.9 Q67.2,75.8 55.9,63.2 Z" fill="#b4d9c6" stroke="#2a6b5b" stroke-width="2" stroke-linejoin="round"/><path d="M182.1,416.7 L154.3,440.3" fill="none" stroke="#c8452f" stroke-width="2.6" stroke-linecap="round" /><path d="M182.1,416.7 Q278.1,336.4 231.4,256.0" fill="none" stroke="#c8452f" stroke-width="2.6" stroke-dasharray="2 7" stroke-linecap="round"/><path d="M231.4,256.0 L209.3,236.5 L179.1,205.0 L151.9,167.2 L160.1,118.4" fill="none" stroke="#c8452f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/><path d="M160.1,118.4 L156.4,93.8" fill="none" stroke="#c8452f" stroke-width="2.6" stroke-linecap="round" /><path d="M156.4,93.8 L192.7,101.0" fill="none" stroke="#c8452f" stroke-width="2.6" stroke-linecap="round" /><a href="#/places/hcmc"><circle cx="182.1" cy="416.7" r="11.5" fill="#a13c4f" stroke="#fff" stroke-width="2.5"/><text x="182.1" y="421.3" text-anchor="middle" class="map-num">1</text><text x="199.1" y="421.7" class="map-name">Ho Chi Minh City</text></a><a href="#/places/mekong"><circle cx="154.3" cy="440.3" r="11.5" fill="#2f7a55" stroke="#fff" stroke-width="2.5"/><text x="154.3" y="444.9" text-anchor="middle" class="map-num">2</text><text x="137.3" y="451.3" text-anchor="end" class="map-name">Mekong Delta</text></a><a href="#/places/hoian"><circle cx="231.4" cy="256.0" r="11.5" fill="#c0661c" stroke="#fff" stroke-width="2.5"/><text x="231.4" y="260.6" text-anchor="middle" class="map-num">3</text><text x="248.4" y="261.0" class="map-name">Hoi An</text></a><a href="#/places/ninhbinh"><circle cx="160.1" cy="118.4" r="11.5" fill="#4d8436" stroke="#fff" stroke-width="2.5"/><text x="160.1" y="123.0" text-anchor="middle" class="map-num">4</text><text x="143.1" y="129.4" text-anchor="end" class="map-name">Ninh Binh</text></a><a href="#/places/hanoi"><circle cx="156.4" cy="90.8" r="11.5" fill="#b23a2a" stroke="#fff" stroke-width="2.5"/><text x="156.4" y="95.4" text-anchor="middle" class="map-num">5</text><text x="139.4" y="87.8" text-anchor="end" class="map-name">Hanoi</text></a><a href="#/places/halong"><circle cx="196.7" cy="101.0" r="11.5" fill="#1f6f63" stroke="#fff" stroke-width="2.5"/><text x="196.7" y="105.6" text-anchor="middle" class="map-num">6</text><text x="213.7" y="106.0" class="map-name">Ha Long Bay</text></a><g transform="translate(20,300)"><rect x="0" y="0" width="112" height="62" rx="8" fill="#fff" opacity=".9"/><path d="M12,18 H44" stroke="#c8452f" stroke-width="2.6" stroke-dasharray="2 7" stroke-linecap="round"/><text x="52" y="22" class="map-sub">Flight</text><path d="M12,38 H44" stroke="#c8452f" stroke-width="2.6" stroke-linecap="round"/><text x="52" y="36" class="map-sub">Train, bus</text><text x="52" y="48" class="map-sub">or tour</text></g><text x="318" y="500" text-anchor="end" class="map-sub" opacity=".8">Sketch map, not to scale</text></svg></div>
-      <ol class="legs"><li><span class="r-date">Feb 12</span><span class="r-place">Victoria → Ho Chi Minh City</span><span class="r-note">Flights via Vancouver and Seoul</span></li>
-<li><span class="r-date">Feb 13</span><a class="r-place" href="#/places/hcmc"><span class="r-n" style="--accent:#a13c4f">1</span>Ho Chi Minh City</a><span class="r-note">3 nights</span></li>
-<li><span class="r-date">Feb 16</span><a class="r-place" href="#/places/mekong"><span class="r-n" style="--accent:#2f7a55">2</span>Mekong Delta</a><span class="r-note">2 nights, small-group tour</span></li>
-<li><span class="r-date">Feb 18</span><a class="r-place" href="#/places/hcmc"><span class="r-n" style="--accent:#a13c4f">1</span>Ho Chi Minh City</a><span class="r-note">2 nights</span></li>
-<li><span class="r-date">Feb 20</span><a class="r-place" href="#/places/hoian"><span class="r-n" style="--accent:#c0661c">3</span>Hoi An</a><span class="r-note">Fly to Da Nang · 4 nights</span></li>
-<li><span class="r-date">Feb 24</span><span class="r-place">Overnight train</span><span class="r-note">Da Nang → Ninh Binh</span></li>
+      <div><svg class="map" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 512" preserveAspectRatio="xMidYMid meet" role="group" aria-label="Sketch map of the route"><rect x="0" y="0" width="330" height="512" rx="14" fill="#fbf1d9"/><path d="M55.9,63.2 Q44.5,50.7 55.9,47.5 Q67.2,44.3 76.3,44.3 Q85.4,44.3 92.9,41.2 Q100.5,38.0 112.6,38.0 Q124.7,38.0 132.2,28.9 Q139.8,19.8 148.9,26.6 Q157.9,33.3 168.5,34.1 Q179.1,34.9 182.1,49.1 Q185.2,63.2 195.7,69.5 Q206.3,75.8 213.9,76.6 Q221.4,77.4 212.4,86.1 Q203.3,94.8 194.2,99.5 Q185.2,104.2 182.1,112.1 Q179.1,120.0 170.0,124.7 Q161.0,129.4 157.9,138.9 Q154.9,148.3 153.4,156.2 Q151.9,164.0 157.9,173.5 Q164.0,183.0 170.0,190.8 Q176.1,198.7 185.2,209.7 Q194.2,220.8 201.8,227.0 Q209.3,233.3 218.4,241.2 Q227.5,249.1 230.5,252.2 Q233.5,255.4 241.1,266.4 Q248.7,277.5 251.7,288.5 Q254.7,299.5 257.0,310.5 Q259.2,321.5 260.0,332.6 Q260.8,343.6 263.0,351.5 Q265.3,359.4 261.5,365.7 Q257.7,372.0 257.7,381.4 Q257.7,390.9 250.2,397.2 Q242.6,403.5 233.5,408.2 Q224.5,412.9 215.4,417.6 Q206.3,422.4 200.3,426.3 Q194.2,430.2 189.7,429.4 Q185.2,428.6 183.6,434.9 Q182.1,441.2 179.1,449.1 Q176.1,457.0 167.0,461.7 Q157.9,466.5 148.9,474.3 Q139.8,482.2 131.5,483.8 Q123.2,485.4 123.9,474.3 Q124.7,463.3 125.4,455.4 Q126.2,447.5 130.0,444.4 Q133.7,441.2 124.7,434.9 Q115.6,428.6 124.7,420.0 Q133.7,411.3 144.3,411.3 Q154.9,411.3 161.0,410.5 Q167.0,409.8 161.7,400.3 Q156.4,390.9 164.7,385.3 Q173.1,379.8 182.1,375.9 Q191.2,372.0 198.8,369.6 Q206.3,367.2 207.8,349.1 Q209.3,331.0 207.8,316.8 Q206.3,302.6 207.1,297.9 Q207.8,293.2 207.1,285.3 Q206.3,277.5 201.8,266.4 Q197.2,255.4 201.0,252.2 Q204.8,249.1 193.5,243.6 Q182.1,238.1 179.9,230.2 Q177.6,222.3 175.3,216.8 Q173.1,211.3 164.0,205.0 Q154.9,198.7 145.8,189.2 Q136.8,179.8 135.3,173.5 Q133.7,167.2 124.7,159.3 Q115.6,151.5 109.6,145.1 Q103.5,138.8 115.6,134.1 Q127.7,129.4 128.5,124.7 Q129.2,120.0 123.9,116.8 Q118.6,113.7 115.6,108.1 Q112.6,102.6 102.0,103.4 Q91.4,104.2 82.3,101.1 Q73.3,97.9 70.2,86.9 Q67.2,75.8 55.9,63.2 Z" fill="#b4d9c6" stroke="#2a6b5b" stroke-width="2" stroke-linejoin="round"/><path d="M182.1,416.7 L154.3,440.3" fill="none" stroke="#c8452f" stroke-width="2.6" stroke-linecap="round" /><path d="M182.1,416.7 Q278.1,336.4 231.4,256.0" fill="none" stroke="#c8452f" stroke-width="2.6" stroke-dasharray="2 7" stroke-linecap="round"/><path d="M231.4,256.0 L209.3,236.5 L179.1,205.0 L151.9,167.2 L160.1,118.4" fill="none" stroke="#c8452f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/><path d="M160.1,118.4 L156.4,93.8" fill="none" stroke="#c8452f" stroke-width="2.6" stroke-linecap="round" /><path d="M156.4,93.8 L192.7,101.0" fill="none" stroke="#c8452f" stroke-width="2.6" stroke-linecap="round" /><a href="#/places/hcmc"><circle cx="182.1" cy="416.7" r="11.5" fill="#a13c4f" stroke="#fff" stroke-width="2.5"/><text x="182.1" y="421.3" text-anchor="middle" class="map-num">1</text><text x="199.1" y="421.7" class="map-name">Ho Chi Minh City</text></a><a href="#/places/mekong"><circle cx="154.3" cy="440.3" r="11.5" fill="#2f7a55" stroke="#fff" stroke-width="2.5"/><text x="154.3" y="444.9" text-anchor="middle" class="map-num">2</text><text x="128.3" y="456.3" text-anchor="end" class="map-name">Mekong Delta</text></a><a href="#/places/hoian"><circle cx="231.4" cy="256.0" r="11.5" fill="#c0661c" stroke="#fff" stroke-width="2.5"/><text x="231.4" y="260.6" text-anchor="middle" class="map-num">3</text><text x="248.4" y="261.0" class="map-name">Hoi An</text></a><a href="#/places/ninhbinh"><circle cx="160.1" cy="120.9" r="11.5" fill="#4d8436" stroke="#fff" stroke-width="2.5"/><text x="160.1" y="125.5" text-anchor="middle" class="map-num">4</text><text x="143.1" y="131.9" text-anchor="end" class="map-name">Ninh Binh</text></a><a href="#/places/hanoi"><circle cx="156.4" cy="88.8" r="11.5" fill="#b23a2a" stroke="#fff" stroke-width="2.5"/><text x="156.4" y="93.4" text-anchor="middle" class="map-num">5</text><text x="139.4" y="85.8" text-anchor="end" class="map-name">Hanoi</text></a><a href="#/places/halong"><circle cx="196.7" cy="101.0" r="11.5" fill="#1f6f63" stroke="#fff" stroke-width="2.5"/><text x="196.7" y="105.6" text-anchor="middle" class="map-num">6</text><text x="213.7" y="106.0" class="map-name">Ha Long Bay</text></a><g transform="translate(20,300)"><rect x="0" y="0" width="112" height="62" rx="8" fill="#fff" opacity=".9"/><path d="M12,18 H44" stroke="#c8452f" stroke-width="2.6" stroke-dasharray="2 7" stroke-linecap="round"/><text x="52" y="22" class="map-sub">Flight</text><path d="M12,38 H44" stroke="#c8452f" stroke-width="2.6" stroke-linecap="round"/><text x="52" y="36" class="map-sub">Train, bus</text><text x="52" y="48" class="map-sub">or tour</text></g><text x="318" y="500" text-anchor="end" class="map-sub" opacity=".8">Sketch map, not to scale</text></svg></div>
+      <ol class="legs"><li><span class="r-date">Feb 12</span><span class="r-place">Victoria → Ho Chi Minh City</span><span class="r-note">Three flights, via Vancouver and Seoul</span></li>
+<li><span class="r-date">Feb 13</span><a class="r-place" href="#/places/hcmc"><span class="r-n" style="--accent:#a13c4f">1</span>Ho Chi Minh City</a><span class="r-note">Landing just before midnight · 3 nights</span></li>
+<li><span class="r-date">Feb 16</span><a class="r-place" href="#/places/mekong"><span class="r-n" style="--accent:#2f7a55">2</span>Mekong Delta</a><span class="r-note">By tour bus, boat and bicycle · 2 nights with a small group</span></li>
+<li><span class="r-date">Feb 18</span><a class="r-place" href="#/places/hcmc"><span class="r-n" style="--accent:#a13c4f">1</span>Ho Chi Minh City</a><span class="r-note">Back with the tour · 2 nights</span></li>
+<li><span class="r-date">Feb 20</span><a class="r-place" href="#/places/hoian"><span class="r-n" style="--accent:#c0661c">3</span>Hoi An</a><span class="r-note">A 1 h 20 min flight to Da Nang, then about 45 minutes by road · 4 nights</span></li>
+<li><span class="r-date">Feb 24</span><span class="r-place">Overnight train</span><span class="r-note">Da Nang → Ninh Binh, about 14 hours in a sleeper</span></li>
 <li><span class="r-date">Feb 25</span><a class="r-place" href="#/places/ninhbinh"><span class="r-n" style="--accent:#4d8436">4</span>Ninh Binh</a><span class="r-note">4 nights</span></li>
-<li><span class="r-date">Mar 1</span><a class="r-place" href="#/places/hanoi"><span class="r-n" style="--accent:#b23a2a">5</span>Hanoi</a><span class="r-note">2 nights</span></li>
-<li><span class="r-date">Mar 3</span><a class="r-place" href="#/places/halong"><span class="r-n" style="--accent:#1f6f63">6</span>Ha Long Bay</a><span class="r-note">2 nights on a cruise</span></li>
-<li><span class="r-date">Mar 5</span><a class="r-place" href="#/places/hanoi"><span class="r-n" style="--accent:#b23a2a">5</span>Hanoi</a><span class="r-note">2 nights</span></li>
-<li><span class="r-date">Mar 7</span><span class="r-place">Hanoi → Victoria</span><span class="r-note">Home the same evening</span></li></ol>
+<li><span class="r-date">Mar 1</span><a class="r-place" href="#/places/hanoi"><span class="r-n" style="--accent:#b23a2a">5</span>Hanoi</a><span class="r-note">About 2 hours by road · 2 nights</span></li>
+<li><span class="r-date">Mar 3</span><a class="r-place" href="#/places/halong"><span class="r-n" style="--accent:#1f6f63">6</span>Ha Long Bay</a><span class="r-note">About 3 hours by shuttle from Hanoi · 2 nights on a cruise</span></li>
+<li><span class="r-date">Mar 5</span><a class="r-place" href="#/places/hanoi"><span class="r-n" style="--accent:#b23a2a">5</span>Hanoi</a><span class="r-note">Back by mid-afternoon · 2 nights</span></li>
+<li><span class="r-date">Mar 7</span><span class="r-place">Hanoi → Victoria</span><span class="r-note">Three flights, via Seoul and Vancouver · home the same evening</span></li></ol>
     </div>
+    <h3 class="sub-h flights-h" id="flights">Flights</h3>
+    <p class="flights-note">Seven flights in all. Times are local to each airport.</p>
+    <ol class="flights"><li><span class="f-date">Fri, Feb 12</span><span class="f-route">Victoria → Vancouver</span><span class="f-no">WestJet WS 3324</span><span class="f-time">10:25 am – 11:05 am</span></li>
+<li><span class="f-date">Fri, Feb 12</span><span class="f-route">Vancouver → Seoul</span><span class="f-no">Korean Air KE 072</span><span class="f-time">2:00 pm – 5:45 pm Saturday</span></li>
+<li><span class="f-date">Sat, Feb 13</span><span class="f-route">Seoul → Ho Chi Minh City</span><span class="f-no">Korean Air KE 479</span><span class="f-time">8:05 pm – 11:50 pm</span></li>
+<li><span class="f-date">Sat, Feb 20</span><span class="f-route">Ho Chi Minh City → Da Nang</span><span class="f-no">Vietnam Airlines VN 132</span><span class="f-time">1:30 pm – 2:50 pm</span></li>
+<li><span class="f-date">Sun, Mar 7</span><span class="f-route">Hanoi → Seoul</span><span class="f-no">Korean Air KE 442</span><span class="f-time">12:20 pm – 6:25 pm</span></li>
+<li><span class="f-date">Sun, Mar 7</span><span class="f-route">Seoul → Vancouver</span><span class="f-no">Korean Air KE 075</span><span class="f-time">10:55 pm – 4:40 pm the same day, across the date line</span></li>
+<li><span class="f-date">Sun, Mar 7</span><span class="f-route">Vancouver → Victoria</span><span class="f-no">Air Canada AC 8165</span><span class="f-time">7:05 pm – 7:36 pm</span></li></ol>
   </div>
 </section>
 
@@ -338,6 +361,7 @@ a.chip:hover{border-color:var(--accent);color:var(--ink)}
     <p class="vn" lang="vi">Thành phố Hồ Chí Minh</p>
     <p class="when">Feb 13 – 16 · Feb 18 – 20</p>
     <dl><dt>Staying</dt><dd>Amory Hotel in District 1, the walkable centre near Bến Thành Market (Feb 13 – 16). The second stay isn’t booked yet.</dd><dt>Weather</dt><dd>Hot, dry and sunny, highs around 32°C. About a week after Tết, so the city is back to normal.</dd></dl>
+    <ul class="ideas" data-title="What we might do" hidden><li>Bến Thành Market, and Bình Tây Market in Chợ Lớn, the old Chinatown</li><li>Skyline views from the Bitexco Skydeck or a rooftop bar</li><li>Jade Emperor Pagoda</li><li>A sunset boat cruise on the Saigon River</li><li>A street-food crawl or a hands-on cooking class</li><li>Notre-Dame Cathedral, the Central Post Office and the Opera House</li></ul>
     <p class="more" aria-hidden="true">See the days here →</p>
   </div></article>
 <article class="stop" id="mekong" style="--accent:#2f7a55">
@@ -348,6 +372,7 @@ a.chip:hover{border-color:var(--accent);color:var(--ink)}
     <p class="vn" lang="vi">Đồng bằng sông Cửu Long</p>
     <p class="when">Feb 16 – 18</p>
     <dl><dt>Staying</dt><dd>Guesthouses and a homestay along the river, on a small-group tour</dd><dt>Weather</dt><dd>Dry season, sunny and hot. Peak time for the floating markets.</dd></dl>
+    <ul class="ideas" data-title="On the tour" hidden><li>Coconut plantations, rowing a sampan and cycling the waterways in Bến Tre</li><li>Cái Răng floating market at sunrise, by boat and on land</li><li>Cooking spring rolls and bánh xèo with a host family, then a lantern-lit village evening</li><li>Cycling through the brick-kiln village of Mang Thít and past rice fields</li></ul>
     <p class="more" aria-hidden="true">See the days here →</p>
   </div></article>
 <article class="stop" id="hoian" style="--accent:#c0661c">
@@ -358,6 +383,7 @@ a.chip:hover{border-color:var(--accent);color:var(--ink)}
     <p class="vn" lang="vi">Hội An</p>
     <p class="when">Feb 20 – 24</p>
     <dl><dt>Staying</dt><dd>KA Villa &amp; Spa at An Bang Beach, a short bike ride from the Old Town</dd><dt>Weather</dt><dd>Warm and sunny, mid-20s°C, very little rain. Good beach weather.</dd></dl>
+    <ul class="ideas" data-title="What we might do" hidden><li>An Bang Beach, a few minutes’ walk from the villa</li><li>The Old Town: the Japanese Covered Bridge, the tailors and the lantern-lit riverside</li><li>A day trip to the Marble Mountains</li><li>Bà Nà Hills and the Golden Bridge</li><li>Da Nang for the Dragon Bridge and the food</li></ul>
     <p class="more" aria-hidden="true">See the days here →</p>
   </div></article>
 <article class="stop" id="ninhbinh" style="--accent:#4d8436">
@@ -368,6 +394,7 @@ a.chip:hover{border-color:var(--accent);color:var(--ink)}
     <p class="vn" lang="vi">Ninh Bình</p>
     <p class="when">Feb 25 – Mar 1</p>
     <dl><dt>Staying</dt><dd>Tam Coc Boutique Garden in Tam Cốc, among the rice paddies and limestone peaks</dd><dt>Weather</dt><dd>Cool and misty, around 16–22°C. The rice paddies are still green.</dd></dl>
+    <ul class="ideas" data-title="What we might do" hidden><li>A boat trip through the karst caves at Tam Cốc or Tràng An</li><li>Hoa Lư, the ancient capital</li><li>The climb to the Mua Cave viewpoint</li><li>Cycling through the countryside</li><li>Bích Động pagoda</li></ul>
     <p class="more" aria-hidden="true">See the days here →</p>
   </div></article>
 <article class="stop" id="hanoi" style="--accent:#b23a2a">
@@ -378,6 +405,7 @@ a.chip:hover{border-color:var(--accent);color:var(--ink)}
     <p class="vn" lang="vi">Hà Nội</p>
     <p class="when">Mar 1 – 3 · Mar 5 – 7</p>
     <dl><dt>Staying</dt><dd>Hanoi Saga Hotel (Mar 1 – 3) and Hanoi Hotel Royal (Mar 5 – 7), both in the Old Quarter near Hoàn Kiếm Lake</dd><dt>Weather</dt><dd>Cooler than the south, highs around 20–23°C, often grey with light drizzle.</dd></dl>
+    <ul class="ideas" data-title="What we might do" hidden><li>The Old Quarter on foot, with bún chả and egg coffee</li><li>Hoàn Kiếm Lake</li><li>The Temple of Literature</li><li>Train Street</li><li>A water puppet show</li></ul>
     <p class="more" aria-hidden="true">See the days here →</p>
   </div></article>
 <article class="stop" id="halong" style="--accent:#1f6f63">
@@ -388,6 +416,7 @@ a.chip:hover{border-color:var(--accent);color:var(--ink)}
     <p class="vn" lang="vi">Vịnh Hạ Long</p>
     <p class="when">Mar 3 – 5</p>
     <dl><dt>Staying</dt><dd>On board Peony Cruises, an overnight cruise in Lan Ha Bay</dd><dt>Weather</dt><dd>Cool on the water, 7–20°C. We’ll be in warm layers.</dd><dt>From Peony Cruises</dt><dd><a href="peony-itinerary.pdf" target="_blank" rel="noopener">Cruise itinerary (PDF)</a> · <a href="peony-menu.pdf" target="_blank" rel="noopener">Menu (PDF)</a></dd></dl>
+    <ul class="ideas" data-title="On the cruise" hidden><li>Kayaking and swimming among the limestone islands</li><li>Tai chi on deck at sunrise</li><li>Cycling to Việt Hải village on Cát Bà Island</li><li>Trung Trang cave</li><li>Spring-roll cooking demonstrations</li><li>Squid fishing off the deck at night</li><li>The jacuzzi pool on deck</li></ul>
     <p class="more" aria-hidden="true">See the days here →</p>
   </div></article></div>
   </div>
@@ -508,7 +537,7 @@ a.chip:hover{border-color:var(--accent);color:var(--ink)}
 </section>
 </main>
 
-<footer><div class="wrap"><span>Vietnam is 15 hours ahead of Victoria during the trip.</span><span>Illustrations and map are sketches, not to scale.</span></div></footer>
+<footer><div class="wrap"><span>Illustrations and map are sketches, not to scale.</span></div></footer>
 
 <script>
 (function(){
@@ -655,6 +684,7 @@ a.chip:hover{border-color:var(--accent);color:var(--ink)}
   function showPlace(id){
     var st = byId[id], i = st.n - 1, prev = STOPS[i-1], next = STOPS[i+1], box = $('#place-body');
     /* the drawing is copied from the card; its internal ids get a prefix so the copy stands alone */
+    var ideas = $('.ideas', st.el);
     var art = $('.art-wrap', st.el).innerHTML.replace(/(id="|url\(#|href="#)/g, '$1p_');
     var days = dayEls.filter(function(li){ return li.getAttribute('data-stop') === id; }).map(function(li){
       var c = li.cloneNode(true); c.removeAttribute('id'); c.classList.remove('run-start', 'is-target'); return c.outerHTML;
@@ -666,6 +696,7 @@ a.chip:hover{border-color:var(--accent);color:var(--ink)}
       '<div class="place-info"><p class="eyebrow">Stop ' + st.n + ' of ' + STOPS.length + '</p><h2>' + esc(st.name) + '</h2>' +
       '<p class="vn" lang="vi">' + esc(st.vn) + '</p><p class="when">' + esc(st.when) + '</p>' +
       '<dl class="facts">' + $('dl', st.el).innerHTML + '</dl></div></div>' +
+      (ideas ? '<h3 class="sub-h">' + esc(ideas.getAttribute('data-title')) + '</h3><ul class="ideas-list">' + ideas.innerHTML + '</ul>' : '') +
       '<h3 class="sub-h">Days here</h3><ol class="days">' + days + '</ol>' +
       '<nav class="pager" aria-label="Other places">' +
       (prev ? '<a href="#/places/' + prev.id + '">← ' + esc(prev.name) + '</a>' : '<span></span>') +
