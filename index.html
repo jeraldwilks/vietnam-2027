@@ -6,6 +6,17 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Vietnam 2027</title>
 <meta name="description" content="Jerald and Andy's trip through Vietnam, Feb 12 – Mar 7, 2027.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://vietnam.wilks.pro/">
+<meta property="og:title" content="Vietnam 2027">
+<meta property="og:description" content="Jerald and Andy's trip through Vietnam, Feb 12 – Mar 7, 2027. The route, the places and the day-by-day plan.">
+<meta property="og:image" content="https://vietnam.wilks.pro/share.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Vietnam 2027: a sunset over limestone islands, with lanterns strung across the sky.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#fbf6ea">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23c8452f'/%3E%3Cpath d='M32 14l5.3 16.3H54L40.4 40.4 45.6 56 32 46.3 18.4 56l5.2-15.6L10 30.3h16.7z' fill='%23f0b23e'/%3E%3C/svg%3E">
 <script>document.documentElement.className='js'</script>
 <style>
@@ -182,6 +193,14 @@ a.r-place:hover{text-decoration:underline;text-decoration-color:var(--gold);text
 .facts dt{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--ink-3);margin-top:8px}
 .facts dd{margin:0;font-size:16px;color:var(--ink-2)}
 .sub-h{font-size:22px;margin:0 0 14px}
+.vn-now{margin:12px 0 0;color:var(--ink-2);font-size:15px}
+.sched{margin-top:12px;border-top:1px solid var(--line);padding-top:10px}
+.sched summary{cursor:pointer;font-weight:600;font-size:15px;color:var(--jade)}
+.sched summary:hover{text-decoration:underline;text-underline-offset:3px}
+.times{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:6px}
+.times li{display:grid;grid-template-columns:76px 1fr;gap:12px;font-size:15px;color:var(--ink-2)}
+.times .t{font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+.sched .note{margin-top:10px;font-size:13px;color:var(--ink-3)}
 .pager{display:flex;justify-content:space-between;gap:12px;margin-top:28px}
 .pager a{display:inline-block;padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);text-decoration:none;font-weight:600;font-size:14px}
 .pager a:hover{border-color:var(--jade)}
@@ -222,6 +241,28 @@ a.chip:hover{border-color:var(--accent);color:var(--ink)}
   .links a{padding:7px 10px}
   .stoplinks{grid-template-columns:1fr}
 }
+
+/* on paper: one clean document with the places and every day, whatever page was showing */
+@media print{
+  @page{margin:14mm}
+  html,body{background:#fff}
+  body{font-size:11pt}
+  nav.top,.hero-art,#status,.vn-now,#home,#route,#place,#cal,#legend,.art-wrap,.more,.pager,.today-badge,.sched summary,footer{display:none!important}
+  .js header[data-view],.js #places,.js #days{display:block!important}
+  .wrap{max-width:none;padding-inline:0}
+  section{padding-block:18px 0}
+  .hero-card{display:block;margin:0;padding:0;border:0;box-shadow:none;background:none}
+  .hero-card h1{font-size:30pt}
+  .stops{grid-template-columns:1fr 1fr;gap:10px}
+  .stop,.day{break-inside:avoid;box-shadow:none;background:#fff}
+  .stop{cursor:auto}
+  #days{break-before:page}
+  .day{padding:10px 12px}
+  .day.is-past{opacity:1}
+  .sched{border-top:0;padding-top:0;margin-top:6px}
+  a{color:inherit;text-decoration:none}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
 </style>
 </head>
 <body>
@@ -238,6 +279,7 @@ a.chip:hover{border-color:var(--accent);color:var(--ink)}
         <p class="eyebrow">Feb 12 – Mar 7, 2027</p>
         <h1>Vietnam <span>2027</span></h1>
         <p class="who"><b>Jerald &amp; Andy</b> travel south to north, from Ho Chi Minh City to Hanoi, over three and a half weeks.</p>
+        <p class="vn-now" id="vn-now" hidden></p>
       </div>
       <div class="status" id="status" aria-live="polite">
         <p class="label">Countdown to take-off</p>
@@ -442,15 +484,18 @@ a.chip:hover{border-color:var(--accent);color:var(--ink)}
 <li class="day" id="d2027-03-03" data-date="2027-03-03" data-stop="halong" style="--accent:#1f6f63">
   <div class="date"><span class="wd">Wed</span><span class="dd">3</span><span class="mo">Mar</span></div>
   <div class="body"><div class="meta"><span class="num">Day 20</span><span class="place">Ha Long Bay</span><span class="today-badge">Today</span></div>
-  <h3>Out to the bay</h3><p>Drive to the coast and board the cruise. Kayaking and swimming among the karsts, then sunset on deck. Peony Cruises sent their <a href="peony-itinerary.pdf" target="_blank" rel="noopener">hour-by-hour itinerary</a> and <a href="peony-menu.pdf" target="_blank" rel="noopener">menu</a> (PDFs).</p></div></li>
+  <h3>Out to the bay</h3><p>Drive to the coast and board the cruise. Kayaking and swimming among the karsts, then sunset on deck. Peony Cruises sent their <a href="peony-itinerary.pdf" target="_blank" rel="noopener">hour-by-hour itinerary</a> and <a href="peony-menu.pdf" target="_blank" rel="noopener">menu</a> (PDFs).</p>
+  <details class="sched"><summary>Peony’s schedule for the day</summary><ol class="times"><li><span class="t">8:00 am</span><span>Pickup in Hanoi’s Old Quarter</span></li><li><span class="t">12:00 pm</span><span>Check in at Tuần Châu Marina</span></li><li><span class="t">12:30 pm</span><span>Tender out to the ship</span></li><li><span class="t">1:00 pm</span><span>Lunch on board as we sail for Lan Ha Bay</span></li><li><span class="t">3:00 pm</span><span>Kayaking and swimming at Trà Báu</span></li><li><span class="t">5:30 pm</span><span>Spring-roll cooking demonstration, happy hour and sunset on the top deck</span></li><li><span class="t">7:00 pm</span><span>Dinner</span></li><li><span class="t">9:00 pm</span><span>Drinks at the sky bar, or squid fishing off the main deck</span></li></ol><p class="note">Times are Peony’s and can shift with the weather.</p></details></div></li>
 <li class="day" id="d2027-03-04" data-date="2027-03-04" data-stop="halong" style="--accent:#1f6f63">
   <div class="date"><span class="wd">Thu</span><span class="dd">4</span><span class="mo">Mar</span></div>
   <div class="body"><div class="meta"><span class="num">Day 21</span><span class="today-badge">Today</span></div>
-  <h3>Lan Ha Bay</h3><p>Tai chi at dawn, cycling to Việt Hải village, and kayaking in a hidden lagoon.</p></div></li>
+  <h3>Lan Ha Bay</h3><p>Tai chi at dawn, cycling to Việt Hải village, and kayaking in a hidden lagoon.</p>
+  <details class="sched"><summary>Peony’s schedule for the day</summary><ol class="times"><li><span class="t">6:00 am</span><span>Tai chi at sunrise</span></li><li><span class="t">6:45 am</span><span>Breakfast</span></li><li><span class="t">7:45 am</span><span>Day boat deeper into Lan Ha Bay</span></li><li><span class="t">10:30 am</span><span>Cycle or ride an e-cart through the forest to Việt Hải village</span></li><li><span class="t">12:15 pm</span><span>Lunch on the day boat</span></li><li><span class="t">1:30 pm</span><span>Kayaking and swimming in a quiet lagoon</span></li><li><span class="t">4:30 pm</span><span>Back on the ship for the jacuzzi</span></li><li><span class="t">5:30 pm</span><span>Happy hour, sunset and another spring-roll demonstration</span></li><li><span class="t">7:00 pm</span><span>Dinner</span></li><li><span class="t">9:00 pm</span><span>Evening on deck, or squid fishing with the crew</span></li></ol><p class="note">Times are Peony’s and can shift with the weather.</p></details></div></li>
 <li class="day" id="d2027-03-05" data-date="2027-03-05" data-stop="halong" style="--accent:#1f6f63">
   <div class="date"><span class="wd">Fri</span><span class="dd">5</span><span class="mo">Mar</span></div>
   <div class="body"><div class="meta"><span class="num">Day 22</span><span class="today-badge">Today</span></div>
-  <h3>Caves &amp; back to Hanoi</h3><p>Trung Trang cave on Cát Bà Island, then back to Hanoi by mid-afternoon.</p></div></li>
+  <h3>Caves &amp; back to Hanoi</h3><p>Trung Trang cave on Cát Bà Island, then back to Hanoi by mid-afternoon.</p>
+  <details class="sched"><summary>Peony’s schedule for the day</summary><ol class="times"><li><span class="t">6:00 am</span><span>Tai chi at sunrise</span></li><li><span class="t">6:45 am</span><span>Breakfast while cruising to Gia Luận jetty</span></li><li><span class="t">7:20 am</span><span>Trung Trang cave on Cát Bà Island</span></li><li><span class="t">9:30 am</span><span>Back on board, cabin check-out and brunch</span></li><li><span class="t">10:30 am</span><span>Disembark at Tuần Châu Marina</span></li><li><span class="t">12:00 pm</span><span>Leave the marina for Hanoi</span></li></ol><p class="note">Times are Peony’s and can shift with the weather.</p></details></div></li>
 <li class="day" id="d2027-03-06" data-date="2027-03-06" data-stop="hanoi" style="--accent:#b23a2a">
   <div class="date"><span class="wd">Sat</span><span class="dd">6</span><span class="mo">Mar</span></div>
   <div class="body"><div class="meta"><span class="num">Day 23</span><span class="place">Hanoi</span><span class="today-badge">Today</span></div>
@@ -580,8 +625,25 @@ a.chip:hover{border-color:var(--accent);color:var(--ink)}
     var key = cls + '|' + html;
     if (mode !== key){ mode = key; el.className = 'status ' + cls; el.innerHTML = html; }
   }
-  render(now());
-  setInterval(function(){ render(now()); }, 1000);
+  /* the time in Vietnam right now, and how far ahead that is of whoever is looking */
+  function vnNow(t){
+    var el = document.getElementById('vn-now');
+    if (t >= T.land && t < T.leave){ el.hidden = true; return; }   /* the status card says it during the trip */
+    var diff = (VN / 60000 + new Date(t).getTimezoneOffset()) / 60, a = Math.abs(diff);
+    var n = (Math.floor(a) || '') + (a % 1 ? '½' : '');
+    var rel = diff === 0 ? 'the same time as you' : n + (a === 1 ? ' hour ' : ' hours ') + (diff > 0 ? 'ahead of you' : 'behind you');
+    var txt = 'In Vietnam it’s ' + vnTime(t) + ', ' + rel + '.';
+    if (el.textContent !== txt) el.textContent = txt;
+    el.hidden = false;
+  }
+  function tick(){ var t = now(); render(t); vnNow(t); }
+  tick();
+  setInterval(tick, 1000);
+
+  /* printing: open the cruise schedules so they are on the paper, then put them back */
+  var opened = [];
+  window.addEventListener('beforeprint', function(){ opened = $$('details:not([open])'); opened.forEach(function(d){ d.open = true; }); });
+  window.addEventListener('afterprint', function(){ opened.forEach(function(d){ d.open = false; }); opened = []; });
 
   /* ---- pages ----
      #/            home
